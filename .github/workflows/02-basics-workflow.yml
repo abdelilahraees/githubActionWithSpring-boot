@@ -1,4 +1,11 @@
 name: 02-basics-workflow.yml
 on:
+  workflow_dispatch
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        run: echo ${{failure()}}
+
