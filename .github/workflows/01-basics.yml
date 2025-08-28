@@ -1,0 +1,9 @@
+name: 01-basics.yml
+on:
+  push
+jobs:
+  firstJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print firstJob
+        run: echo "hello kida this firstJob"
