@@ -4,7 +4,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: success()
     steps:
       - name: build
-        run: echo ${{success()}}
+        run: echo "job Success"
 
