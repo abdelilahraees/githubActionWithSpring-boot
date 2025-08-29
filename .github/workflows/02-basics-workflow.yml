@@ -1,4 +1,5 @@
 name: 02-basics-workflow.yml
+run-name: basic-workflow-${{github.run_number}}
 on:
   workflow_dispatch
 jobs:

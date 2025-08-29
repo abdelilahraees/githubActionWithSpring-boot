@@ -1,0 +1,14 @@
+name: buildAndDeployToDockerHub.yml
+run-name: build number ${{github.run_number}}
+on:
+  push
+
+jobs:
+  checkout-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout-code
+        uses: actions/checkout@v5
+  build:
+    steps:
+      - name: build
