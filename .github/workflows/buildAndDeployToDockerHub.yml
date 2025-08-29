@@ -15,7 +15,7 @@ jobs:
       # Étape 1: Récupère le code de votre dépôt
       - name: Checkout Code
         run: echo ${{secrets.DOCKERHUB_USERNAME}}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # Étape 2: Connexion à Docker Hub
       # Utilise les secrets pour une connexion sécurisée
