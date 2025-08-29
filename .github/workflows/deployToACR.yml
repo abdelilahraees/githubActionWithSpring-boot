@@ -31,6 +31,8 @@ jobs:
         uses: azure/docker-login@v1
         with:
           login-server: ${{ secrets.ACR_NAME }}.azurecr.io
+          username: 'abdelilah benkida'
+          password: 'Benkida.0628752146@'
           # Étape 4: Construit et pousse l'image sur ACR
       # Le tag est maintenant formaté pour correspondre à votre registre ACR.
       - name: Build and push Docker image to ACR
