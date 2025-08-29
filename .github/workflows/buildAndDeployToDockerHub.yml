@@ -13,8 +13,8 @@ jobs:
     steps:
       # Étape 1: Récupère le code de votre dépôt
       - name: Checkout Code
-        uses: actions/checkout@v4
         run: echo ${{secrets.DOCKERHUB_USERNAME}}
+#        uses: actions/checkout@v4
 #           echo ${{secrets.GITHUB_TOKEN}}
 #           echo ${{secrets.DOCKERHUB_TOKEN}}
 
