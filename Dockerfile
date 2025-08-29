@@ -9,8 +9,6 @@ COPY . .
 
 # Exécute la commande Maven pour construire le JAR
 RUN mvn -B package
-
-a
 # --- Étape 2: Création de l'image finale avec JRE 21 ---
 FROM eclipse-temurin:21-jre
 
