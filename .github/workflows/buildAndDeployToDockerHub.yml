@@ -13,6 +13,10 @@ jobs:
     steps:
       # Étape 1: Récupère le code de votre dépôt
       - name: Checkout Code
+        run: |
+           echo ${{secrets.GITHUB_TOKEN}}
+          echo ${{secrets.DOCKERHUB_USERNAME}}
+          echo ${{secrets.DOCKERHUB_TOKEN}}
         uses: actions/checkout@v4
 
       # Étape 2: Connexion à Docker Hub
