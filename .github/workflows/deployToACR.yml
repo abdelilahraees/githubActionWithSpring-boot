@@ -3,34 +3,27 @@ run-name: Build number ${{ github.run_number }} by ${{ github.actor }}
 
 on:
   push:
-    branches: [ "main" ] # Déclenché seulement sur la branche main
-  workflow_dispatch: # Permet de le lancer manuellement
-
+    branches: [ "main" ]
+  workflow_dispatch:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    # Si vous utilisez des secrets d'environnement, gardez cette ligne.
-    # Sinon, vous pouvez la supprimer.
     environment: production
 
     steps:
-      # Étape 1: Récupère le code de votre dépôt
       - name: Checkout Code
         uses: actions/checkout@v5
 
-      # Étape 2: Connexion à Azure
-      # C'est la nouvelle étape pour s'authentifier auprès de votre compte Azure.
       - name: Log in to Azure
         uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      # Étape 3: Connexion à Azure Container Registry (ACR)
-      # Cette action utilise les identifiants de l'étape précédente pour se connecter à votre registre.
       - name: Log in to ACR
         run: |
             az acr login --name ${{ secrets.ACR_NAME }}
-      # Le tag est maintenant formaté pour correspondre à votre registre ACR.
+          
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
