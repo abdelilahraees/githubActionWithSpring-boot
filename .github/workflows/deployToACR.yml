@@ -21,14 +21,14 @@ jobs:
       # Étape 2: Connexion à Azure
       # C'est la nouvelle étape pour s'authentifier auprès de votre compte Azure.
       - name: Log in to Azure
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       # Étape 3: Connexion à Azure Container Registry (ACR)
       # Cette action utilise les identifiants de l'étape précédente pour se connecter à votre registre.
       - name: Log in to ACR
-        uses: azure/docker-login@v1
+        uses: azure/docker-login@v2
         with:
           login-server: ${{ secrets.ACR_NAME }}.azurecr.io
           username: 'abdelilah benkida'
