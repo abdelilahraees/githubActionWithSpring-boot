@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     @GetMapping("/")
     public  String index() {
-        return "fyn akhay amin";
+        return "<h1>Welcome to Kida's Genetic Algorithm Service</h1>";
     }
 }
