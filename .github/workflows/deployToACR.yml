@@ -32,8 +32,6 @@ jobs:
             tags: ${{ secrets.ACR_NAME }}.azurecr.io/kida-store-app:latest
 
       - name: Restart Azure App Service 🔄
-        uses: azure/cli@v1
-        with:
-          inlineScript: |
+        run: |
             az webapp restart --name kida-store --resource-group kida-store
 
