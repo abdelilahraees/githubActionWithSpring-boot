@@ -29,11 +29,11 @@ jobs:
         with:
             context: .
             push: true
-            tags: ${{ secrets.ACR_NAME }}.azurecr.io/
+            tags: ${{ secrets.ACR_NAME }}.azurecr.io/kida-store-app:latest
 
-#      - name: Restart Azure App Service 🔄
-#        uses: azure/cli@v1
-#        with:
-#          inlineScript: |
-#            az webapp restart --name kida-store --resource-group kida-store
+      - name: Restart Azure App Service 🔄
+        uses: azure/cli@v1
+        with:
+          inlineScript: |
+            az webapp restart --name ${{ secrets.AZURE_WEBAPP_NAME }} --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }}
 
