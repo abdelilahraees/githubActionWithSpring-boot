@@ -35,5 +35,5 @@ jobs:
         uses: azure/cli@v1
         with:
           inlineScript: |
-            az webapp restart --name ${{ secrets.AZURE_WEBAPP_NAME }} --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }}
+            az webapp restart --name kida-store --resource-group kida-store
 
