@@ -36,5 +36,5 @@ jobs:
         with:
             context: .
             push: true
-            tags: ${{ secrets.ACR_NAME }}.azurecr.io/mon-image:latest
+            tags: ${{ secrets.ACR_NAME }}.azurecr.io/kida-store-app:latest
 
